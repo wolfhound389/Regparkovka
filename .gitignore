@@ -1,0 +1,55 @@
+# Файлы с секретами
+.env
+*.env
+.env.*
+!.env.example
+
+# Базы данных
+*.db
+*.sqlite
+*.sqlite3
+
+# Логи
+*.log
+bot.log
+logs/
+
+# Кэш Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.python-version
+venv/
+env/
+.envrc
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Миграции
+alembic/versions/
+*.pyc
+
+# Отчеты
+reports/
+*.xlsx
+*.xls
+
+# Временные файлы
+temp/
+tmp/
+*.tmp
+
+# Docker
+*.pid
+*.sock
+
+# Replit
+.replit
+replit.nix
+.breakpoints
+.upm/

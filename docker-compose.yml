@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14-alpine
+    container_name: parking_bot_db
+    environment:
+      POSTGRES_DB: parking_bot
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: your_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+  bot:
+    build: .
+    container_name: parking_bot
+    depends_on:
+      - postgres
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: parking_bot
+      DB_USER: postgres
+      DB_PASSWORD: your_password
+      ADMIN_IDS: ${ADMIN_IDS}
+    restart: unless-stopped
+volumes:
+  postgres_data:

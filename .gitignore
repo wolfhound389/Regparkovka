@@ -1,11 +1,12 @@
-# Файлы с секретами
+# Токены и конфиденциальные данные
 .env
 *.env
 .env.*
 !.env.example
 
-# Базы данных
+# База данных
 *.db
+*.db-*
 *.sqlite
 *.sqlite3
 
@@ -16,40 +17,39 @@ logs/
 
 # Кэш Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
 .python-version
+*.so
+
+# Директории виртуального окружения
 venv/
 env/
-.envrc
+ENV/
+.venv/
+virtualenv/
 
-# IDE
+# Директории IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
-# Миграции
-alembic/versions/
-*.pyc
+# Файлы конфигурации
+config.local.py
+*.local.py
 
-# Отчеты
-reports/
-*.xlsx
-*.xls
+# Изображения (если они конфиденциальны)
+gates_images/
+!gates_images/README.md
 
-# Временные файлы
-temp/
-tmp/
+# Тестовые файлы
+test_*.py
+*.test.py
+
+# Дополнительно
+.DS_Store
+Thumbs.db
+*.bak
 *.tmp
-
-# Docker
-*.pid
-*.sock
-
-# Replit
-.replit
-replit.nix
-.breakpoints
-.upm/
